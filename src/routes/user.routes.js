@@ -1,10 +1,15 @@
-const express = require('express');
-const userController = require('../controllers/users.controller');
-const {userRoutes} = require('../constants/');
+const express = require("express");
+const { loginUser, signupUser } = require("../controllers/users.controller");
+const { userRoutes } = require("../constants/");
 
 const userRouter = express.Router({ mergeParams: true });
 
-// userRouter.post(userRoutes.CREATE_USER, userController.createUser);
-userRouter.post('/create-user', userController.createUser);
+// login route
+
+userRouter.post(userRoutes.LOGIN_USER, loginUser);
+
+// signup route
+
+userRouter.post(userRoutes.SIGNUP_USER, signupUser);
 
 module.exports = userRouter;

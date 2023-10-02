@@ -1,3 +1,4 @@
 module.exports.userRoutes = {
-    CREATE_USER: "/create-user",
+  LOGIN_USER: "/login",
+  SIGNUP_USER: "/signup",
 };
